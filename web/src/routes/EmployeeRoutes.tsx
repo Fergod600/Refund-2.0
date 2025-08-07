@@ -4,7 +4,7 @@ import { AppLayout } from "../components/AppLayout";
 
 import { Refund } from "../pages/Refund";
 import { NotFound } from "../pages/NotFound";
-import { Confirm } from "../pages/confirm";
+import { Confirm } from "../pages/Confirm";
 
 export function EmployeeRoutes() {
     return (
