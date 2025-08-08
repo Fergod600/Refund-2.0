@@ -1,7 +1,7 @@
 import { BrowserRouter } from "react-router";
 import { AuthRoutes } from "./authRoutes";
 import { EmployeeRoutes } from "./EmployeeRoutes";
-import { ManagerRoutes } from "./managerRoutes";
+import { ManagerRoutes } from "./ManagerRoutes";
 import { Loading } from "../components/Loading";
 
 const isLoading = false
@@ -11,25 +11,25 @@ const isLoading = false
 
 const session = {
     user: {
-        role:"employee",
-    }
+        role: "",
+    },
 }
 
 export function Routes() {
-    function Route (){
+    function Route() {
         switch (session?.user.role) {
             case "employee":
-                return <EmployeeRoutes/>
+                return <EmployeeRoutes />
             case "manager":
-                return <ManagerRoutes/>
-        
+                return <ManagerRoutes />
+
             default:
-                return <AuthRoutes/>
+                return <AuthRoutes />
         }
     }
 
     if (isLoading) {
-        return <Loading/>
+        return <Loading />
     }
     return (
         <BrowserRouter>
