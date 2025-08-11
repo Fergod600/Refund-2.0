@@ -5,6 +5,7 @@ import { Button } from "../components/Button"
 import { z, ZodError } from "zod"
 import { api } from "../services/api"
 import { AxiosError } from "axios"
+import { useAuth } from "../hooks/useAuth"
 
 
 const signInSchema = z.object({
@@ -15,6 +16,8 @@ const signInSchema = z.object({
 export function SignIn() {
     const [state, formAction, isLoading] = useActionState(signIn, null)
 
+    const auth = useAuth()
+
 
     async function signIn(_: any, formData: FormData) {
         try {
@@ -24,7 +27,7 @@ export function SignIn() {
             })
 
             const response = await api.post("/sessions", data)
-            console.log(response)
+            auth.save(response.data)
 
         } catch (error) {
             console.log(error)

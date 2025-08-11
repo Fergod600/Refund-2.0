@@ -7,6 +7,7 @@ import { CATEGORIES } from "../utils/categories"
 import { formatCurrency } from "../utils/formatCurrency"
 import { Pagination } from "../components/Pagination"
 
+
 const REFUND_EXAMPLE = {
     id: "123",
     name: "Fernando",
@@ -20,6 +21,8 @@ export function Dashboard() {
     const [page, setPage] = useState(1)
     const [totalOfPage, setTotalOfPage] = useState(10)
     const [refunds, setRefunds] = useState<RefundItemProps[]>([REFUND_EXAMPLE])
+
+
 
     function fetchRefunds(e: React.FormEvent) {
         e.preventDefault()
@@ -40,7 +43,7 @@ export function Dashboard() {
     }
 
     return (
-        <div className="bg-gray-500 rounded-xl p-10 md:min-[768px]:">
+        <div className="bg-gray-500 rounded-xl p-10 md:min-w-[768px]">
             <h1 className="text-gray-100 font-bold text-xl flex-1">Solicitações</h1>
 
             <form onSubmit={fetchRefunds} className="flex flex-1 items-center justify-between pb-6 border-b-[1px]
@@ -59,7 +62,7 @@ export function Dashboard() {
                         <RefundItem key={item.id} data={item} href={`/refund/${item.id}`} />
                     ))
                 }
-                
+
             </div>
             <Pagination
                 current={page}
