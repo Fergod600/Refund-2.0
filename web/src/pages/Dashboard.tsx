@@ -13,7 +13,7 @@ const REFUND_EXAMPLE = {
     name: "Fernando",
     category: "Transporte",
     amount: formatCurrency(34.5),
-    categoryImg: CATEGORIES["tranport"].icon,
+    categoryImg: CATEGORIES["transport"].icon,
 }
 
 export function Dashboard() {
