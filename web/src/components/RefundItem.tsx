@@ -1,9 +1,9 @@
-import { data } from "react-router"
+
 
 export type RefundItemProps = {
     id: string
     name: string
-    category: string
+    description: string
     amount: string
     categoryImg: string
 }
@@ -19,8 +19,8 @@ export function RefundItem({ data, ...rest }: Props) {
                 className="w-8 h-8" />
 
             <div className="flex flex-col flex-1">
-                <strong className=" text-sm text-gray-100">{data.name}</strong>
-                <span className=" text-xs text-gray-200">{data.category}</span>
+                <strong className=" text-sm text-gray-100 capitalize">{data.name}</strong>
+                <span className=" text-xs text-gray-200">{data.description}</span>
             </div>
 
             <span className="text-sm text-gray-100 font-semibold">
